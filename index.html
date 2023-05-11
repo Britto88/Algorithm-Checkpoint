@@ -1,0 +1,32 @@
+1. Initialize variables count_length, count_words, count_vowels to 0.
+2. Read the input sentence as a string.
+3. For each character in the sentence, do the following:
+   a. Increment the count_length variable by 1.
+   b. If the character is a vowel (i.e., 'a', 'e', 'i', 'o', or 'u'), increment the count_vowels variable by 1.
+   c. If the character is a space, increment the count_words variable by 1.
+4. Increment the count_words variable by 1 to account for the last word in the sentence.
+5. Print the count_length, count_words, and count_vowels variables.
+
+Here is the JavaScript code for the above algorithm:
+
+let sentence = prompt("Enter a sentence: ");
+
+let count_length = 0;
+let count_words = 0;
+let count_vowels = 0;
+
+for (let i = 0; i < sentence.length; i++) {
+    count_length++;
+    if (/[aeiou]/i.test(sentence[i])) {
+        count_vowels++;
+    }
+    if (sentence[i] === ' ') {
+        count_words++;
+    }
+}
+
+<!-- count_words++; // to account for the last word in the sentence -->
+
+console.log("Length of sentence:", count_length);
+console.log("Number of words:", count_words);
+console.log("Number of vowels:", count_vowels);
